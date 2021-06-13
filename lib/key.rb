@@ -5,7 +5,7 @@ class Key
   end
 
   def input_key
-    @key.split.map do |key|
+    @key.split('').map do |key|
       key.to_i
     end
   end
