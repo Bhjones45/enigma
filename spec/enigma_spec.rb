@@ -1,5 +1,11 @@
-requirea_relative 'spec_helper'
+require_relative 'spec_helper'
 require 'date'
 require './lib/enigma'
 
-enigma = Enigma.new
+RSpec.describe Enigma do
+  describe 'instantiation' do
+    it 'exists' do
+      enigma = Enigma.new
+    end
+  end
+end
