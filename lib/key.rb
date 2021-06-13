@@ -21,6 +21,6 @@ class Key
   def new_offset
     date_squared_string.split('').map do |offset|
       offset.to_i
-    end
+    end.last(4)
   end
 end
