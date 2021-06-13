@@ -12,5 +12,5 @@ RSpec.describe Enigma do
   end
 
   describe 'Methods' do
-    
+  end
 end
