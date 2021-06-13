@@ -23,4 +23,24 @@ class Key
       offset.to_i
     end.last(4)
   end
+
+  def join_key(number1, number2)
+    input_key[number1..number2].join.to_i + new_offset[number1]
+  end
+
+  def final_shift_a
+    join_key(0, 1)
+  end
+
+  def final_shift_b
+    join_key(1, 2)
+  end
+
+  def final_shift_c
+    join_key(2, 3)
+  end
+
+  def final_shift_d
+    join_key(3, 4)
+  end
 end
