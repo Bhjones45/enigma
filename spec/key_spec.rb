@@ -33,5 +33,14 @@ RSpec.describe Key do
 
       expect(@key.new_offset).to eq([1, 0, 2, 5])
     end
+
+    it 'can return the final shifts' do
+      @key = Key.new('02715', '040895')
+
+      expect(@key.final_shift_a).to eq(3)
+      expect(@key.final_shift_b).to eq(27)
+      expect(@key.final_shift_c).to eq(73)
+      expect(@key.final_shift_d).to eq(20)
+    end
   end
 end
