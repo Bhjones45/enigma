@@ -1,12 +1,9 @@
 class Rearrange
-  attr_reader :message,
-              :key,
-              :date
+  attr_reader :rearrange_text,
+              :rearrange_key
 
-  def initialize(message, key, date)
-    @message = message
-    @key = key
-    @date = date
+  def initialize(text, key, date)
+    @rearrange_text =
   end
 
   def alphabet
