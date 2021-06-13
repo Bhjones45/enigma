@@ -31,7 +31,7 @@ RSpec.describe Key do
     it 'can take last 4 digits from date squared string' do
       @key = Key.new('02715', '040895')
 
-      expect(@key.new_offset).to eq([1, 0, 2, 5)
+      expect(@key.new_offset).to eq([1, 0, 2, 5])
     end
   end
 end
