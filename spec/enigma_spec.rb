@@ -1,6 +1,5 @@
 require_relative 'spec_helper'
 require 'date'
-require './lib/enigma'
 
 RSpec.describe Enigma do
   describe 'Instantiation' do
@@ -12,6 +11,13 @@ RSpec.describe Enigma do
   end
 
   describe 'Methods' do
+    it 'can generate todays date into DDMMYY' do
+      enigma = Enigma.new
+
+      expect(enigma.date_now('140621')).to eq('140621')
+    end
+
+
     xit 'can encrypt with both key and date' do
       enigma = Enigma.new
       input = enigma.encrypt("hello world", "02715", "040895")
