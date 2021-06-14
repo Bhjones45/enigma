@@ -39,6 +39,7 @@ class Rearrange
   end
 
   def hidden_message
-    rearrange_encrypted_a.zip(rearrange_encrypted_b, rearrange_encrypted_c, rearrange_encrypted_d)
+    encrypt = rearrange_encrypted_a.zip(rearrange_encrypted_b, rearrange_encrypted_c, rearrange_encrypted_d)
+    encrypt.flatten.join
   end
 end
