@@ -40,11 +40,11 @@ class Rearrange
   def encrypt_characters(rearrange_characters, final_shift)
     rearrange_characters.map do |character|
       if alphabet.include?(character)
-        alphabet.rotate
+        offset = alphabet.find_index(character)
+        alphabet.rotate(final_shift)[offset]
       else
         character
       end
-      require "pry"; binding.pry
     end
   end
 
