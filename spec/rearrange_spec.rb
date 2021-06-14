@@ -35,6 +35,15 @@ RSpec.describe Rearrange do
       expect(rearrange.character_index(3)).to eq(["l", "o"])
     end
 
+    it 'can rearrange_characters' do
+      rearrange = Rearrange.new("hello world", "02715", "040895")
+
+      expect(rearrange.rearrange_characters_a).to eq(["h", "o", "r"])
+      expect(rearrange.rearrange_characters_b).to eq(["e", " ", "l"])
+      expect(rearrange.rearrange_characters_c).to eq(["l", "w", "d"])
+      expect(rearrange.rearrange_characters_d).to eq(["l", "o"])
+    end
+
     it 'can encrypt characters' do
       rearrange = Rearrange.new("hello world", "02715", "040895")
       expect(rearrange.encrypt_characters(["h", "o", "r"], 3)).to eq(["k", "r", "u"])

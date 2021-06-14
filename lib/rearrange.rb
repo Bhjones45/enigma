@@ -25,15 +25,15 @@ class Rearrange
     character_index(0)
   end
 
-  def rearrange_characters_a
+  def rearrange_characters_b
     character_index(1)
   end
 
-  def rearrange_characters_a
+  def rearrange_characters_c
     character_index(2)
   end
 
-  def rearrange_characters_a
+  def rearrange_characters_d
     character_index(3)
   end
 
@@ -52,4 +52,15 @@ class Rearrange
     encrypted_characters(@message.rearrange_characters_a, @new_key.final_shift_a)
   end
 
+  def rearrange_encrypted_b
+    encrypted_characters(@message.rearrange_characters_b, @new_key.final_shift_b)
+  end
+
+  def rearrange_encrypted_c
+    encrypted_characters(@message.rearrange_characters_c, @new_key.final_shift_c)
+  end
+
+  def rearrange_encrypted_d
+    encrypted_characters(@message.rearrange_characters_d, @new_key.final_shift_d)
+  end
 end
