@@ -17,6 +17,10 @@ RSpec.describe Enigma do
       expect(enigma.date_now('140621')).to eq('140621')
     end
 
+    it 'can randomly generate a key' do
+      enigma = Enigma.new
+      expect(enigma.key_generate.length).to eq(5)
+    end
 
     xit 'can encrypt with both key and date' do
       enigma = Enigma.new
