@@ -49,5 +49,14 @@ RSpec.describe Rearrange do
 
       expect(rearrange.hidden_message).to eq("keder ohulw")
     end
+
+    it 'can decrypt the encrypted message' do
+      rearrange = Rearrange.new("keder ohulw", "02715", "040895")
+
+      expect(rearrange.rearrange_decrypted_a).to eq(["h", "o", "r"])
+      expect(rearrange.rearrange_decrypted_b).to eq(["e", " ", "l"])
+      expect(rearrange.rearrange_decrypted_c).to eq(["l", "w", "d"])
+      expect(rearrange.rearrange_decrypted_d).to eq(["l", "o"])
+    end
   end
 end
