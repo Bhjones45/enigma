@@ -52,10 +52,10 @@ RSpec.describe Rearrange do
 
     it 'can decrypt characters' do
       rearrange = Rearrange.new("keder ohulw", "02715", "040895")
-      expect(rearrange.encrypt_characters(["k", "r", "u"], 3)).to eq(["h", "o", "r"])
-      expect(rearrange.encrypt_characters(["e", " ", "l"], 27)).to eq(["e", " ", "l"])
-      expect(rearrange.encrypt_characters(["d", "o", "w"], 73)).to eq(["l", "w", "d"])
-      expect(rearrange.encrypt_characters(["e", "h"], 20)).to eq(["l", "o"])
+      expect(rearrange.decrypt_characters(["k", "r", "u"], 3)).to eq(["h", "o", "r"])
+      expect(rearrange.decrypt_characters(["e", " ", "l"], 27)).to eq(["e", " ", "l"])
+      expect(rearrange.decrypt_characters(["d", "o", "w"], 73)).to eq(["l", "w", "d"])
+      expect(rearrange.decrypt_characters(["e", "h"], 20)).to eq(["l", "o"])
     end
 
     it 'can decrypt the encrypted message' do
