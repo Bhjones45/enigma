@@ -39,7 +39,7 @@ RSpec.describe Rearrange do
       rearrange = Rearrange.new("hello world", "02715", "040895")
 
       expect(rearrange.rearrange_encrypted_a).to eq(["k", "r", "u"])
-      expect(rearrange.rearrange_encrypted_b).to eq(["e", "", "l"])
+      expect(rearrange.rearrange_encrypted_b).to eq(["e", " ", "l"])
       expect(rearrange.rearrange_encrypted_c).to eq(["d", "o", "w"])
       expect(rearrange.rearrange_encrypted_d).to eq(["e", "h",])
     end

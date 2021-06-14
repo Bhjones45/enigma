@@ -3,7 +3,7 @@ class Rearrange
               :new_key
 
   def initialize(message, key, date)
-    @message = message
+    @message = Message.new(message)
     @new_key = Key.new(key, date)
   end
 
@@ -23,18 +23,18 @@ class Rearrange
   end
 
   def rearrange_encrypted_a
-    encrypted_characters(@message.rearrange_characters_a, @new_key.final_shift_a)
+    encrypt_characters(@message.rearrange_characters_a, @new_key.final_shift_a)
   end
 
   def rearrange_encrypted_b
-    encrypted_characters(@message.rearrange_characters_b, @new_key.final_shift_b)
+    encrypt_characters(@message.rearrange_characters_b, @new_key.final_shift_b)
   end
 
   def rearrange_encrypted_c
-    encrypted_characters(@message.rearrange_characters_c, @new_key.final_shift_c)
+    encrypt_characters(@message.rearrange_characters_c, @new_key.final_shift_c)
   end
 
   def rearrange_encrypted_d
-    encrypted_characters(@message.rearrange_characters_d, @new_key.final_shift_d)
+    encrypt_characters(@message.rearrange_characters_d, @new_key.final_shift_d)
   end
 end
