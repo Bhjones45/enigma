@@ -42,4 +42,15 @@ class Rearrange
     encrypt = rearrange_encrypted_a.zip(rearrange_encrypted_b, rearrange_encrypted_c, rearrange_encrypted_d)
     encrypt.flatten.join
   end
+
+  def decrypt_characters(rearrange_characters, final_shift)
+    rearrange_characters.map do |character|
+      if alphabet.include?(character)
+        offset = alphabet.reverse.find_index(character)
+        alphabet.rotate(final_shift)[offset]
+      else
+        character
+      end
+    end
+  end
 end
