@@ -7,3 +7,4 @@ end
 require './lib/enigma'
 require './lib/key'
 require './lib/rearrange'
+require './lib/message'
