@@ -13,8 +13,7 @@ RSpec.describe Rearrange do
       rearrange = Rearrange.new("hello world", "02715", "040895")
 
       expect(rearrange.message).to eq("hello world")
-      expect(rearrange.key).to eq("02715")
-      expect(rearrange.date).to eq("040895")
+      expect(rearrange.new_key).to be_a(Key)
     end
   end
 
@@ -27,17 +26,28 @@ RSpec.describe Rearrange do
       expect(rearrange.alphabet).to eq(expected)
     end
 
-    it 'can find the rearranged characters in text' do
+    it 'can find the characters in text' do
       rearrange = Rearrange.new("hello world", "02715", "040895")
 
       expect(rearrange.character_index(0)).to eq(["h", "o", "r"])
       expect(rearrange.character_index(1)).to eq(["e", " ", "l"])
       expect(rearrange.character_index(2)).to eq(["l", "w", "d"])
       expect(rearrange.character_index(3)).to eq(["l", "o"])
-      # expect(rearrange.rearranged_encrypted_a).to eq(["k", "r", "u"])
-      # expect(rearrange.rearranged_encrypted_b).to eq(["e", "", "l"])
-      # expect(rearrange.rearranged_encrypted_c).to eq(["d", "o", "w"])
-      # expect(rearrange.rearranged_encrypted_d).to eq(["e", "h",])
+    end
+
+    it 'can encrypt characters' do
+      rearrange = Rearrange.new("hello world", "02715", "040895")
+      expect(rearrange.encrypt_characters(["h", "o", "r"], 1)).to eq(l)
+    end
+
+
+    it 'can find the rearranged characters in text' do
+      rearrange = Rearrange.new("hello world", "02715", "040895")
+
+      expect(rearrange.rearrange_encrypted_a).to eq(["k", "r", "u"])
+      expect(rearrange.rearrange_encrypted_b).to eq(["e", "", "l"])
+      expect(rearrange.rearrange_encrypted_c).to eq(["d", "o", "w"])
+      expect(rearrange.rearrange_encrypted_d).to eq(["e", "h",])
     end
   end
 end

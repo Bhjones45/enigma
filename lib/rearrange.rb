@@ -1,12 +1,10 @@
 class Rearrange
   attr_reader :message,
-              :key,
-              :date
+              :new_key
 
   def initialize(message, key, date)
     @message = message
-    @key = key
-    @date = date
+    @new_key = Key.new(key, date)
   end
 
   def alphabet
@@ -23,6 +21,35 @@ class Rearrange
     characters.compact
   end
 
-  # def rearranged_encrypted_a
-  #   character_index
+  def rearrange_characters_a
+    character_index(0)
+  end
+
+  def rearrange_characters_a
+    character_index(1)
+  end
+
+  def rearrange_characters_a
+    character_index(2)
+  end
+
+  def rearrange_characters_a
+    character_index(3)
+  end
+
+  def encrypt_characters(rearrange_characters, final_shift)
+    rearrange_characters.map do |character|
+      if alphabet.include?(character)
+        alphabet.rotate
+      else
+        character
+      end
+      require "pry"; binding.pry
+    end
+  end
+
+  def rearrange_encrypted_a
+    encrypted_characters(@message.rearrange_characters_a, @new_key.final_shift_a)
+  end
+
 end
