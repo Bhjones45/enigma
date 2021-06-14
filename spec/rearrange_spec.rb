@@ -26,6 +26,14 @@ RSpec.describe Rearrange do
 
       expect(rearrange.alphabet).to eq(expected)
     end
-    
+
+    it 'can find the rearranged characters in text' do
+      rearrange = Rearrange.new("hello world", "02715", "040895")
+
+      expect(rearrange.rearranged_encrypted_a).to eq(["k", "r", "u"])
+      expect(rearrange.rearranged_encrypted_b).to eq(["e", "", "l"])
+      expect(rearrange.rearranged_encrypted_c).to eq(["d", "o", "w"])
+      expect(rearrange.rearranged_encrypted_d).to eq(["e", "h",])
+    end
   end
 end
