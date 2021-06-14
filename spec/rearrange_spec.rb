@@ -32,6 +32,7 @@ RSpec.describe Rearrange do
       expect(rearrange.encrypt_characters(["e", " ", "l"], 27)).to eq(["e", " ", "l"])
       expect(rearrange.encrypt_characters(["l", "w", "d"], 73)).to eq(["d", "o", "w"])
       expect(rearrange.encrypt_characters(["l", "o"], 20)).to eq(["e", "h"])
+      expect(rearrange.encrypt_characters(["!", ","], 20)).to eq(["!", ","])
     end
 
 
@@ -41,7 +42,7 @@ RSpec.describe Rearrange do
       expect(rearrange.rearrange_encrypted_a).to eq(["k", "r", "u"])
       expect(rearrange.rearrange_encrypted_b).to eq(["e", " ", "l"])
       expect(rearrange.rearrange_encrypted_c).to eq(["d", "o", "w"])
-      expect(rearrange.rearrange_encrypted_d).to eq(["e", "h",])
+      expect(rearrange.rearrange_encrypted_d).to eq(["e", "h"])
     end
 
     it 'can return the encrypted message' do
@@ -56,6 +57,7 @@ RSpec.describe Rearrange do
       expect(rearrange.decrypt_characters(["e", " ", "l"], 27)).to eq(["e", " ", "l"])
       expect(rearrange.decrypt_characters(["d", "o", "w"], 73)).to eq(["l", "w", "d"])
       expect(rearrange.decrypt_characters(["e", "h"], 20)).to eq(["l", "o"])
+      expect(rearrange.decrypt_characters(["!", ","], 20)).to eq(["!", ","])
     end
 
     it 'can decrypt the encrypted message' do
@@ -65,6 +67,12 @@ RSpec.describe Rearrange do
       expect(rearrange.rearrange_decrypted_b).to eq(["e", " ", "l"])
       expect(rearrange.rearrange_decrypted_c).to eq(["l", "w", "d"])
       expect(rearrange.rearrange_decrypted_d).to eq(["l", "o"])
+    end
+
+    it 'can decrypt the message' do
+      rearrange = Rearrange.new("keder ohulw", "02715", "040895")
+
+      expect(rearrange.uncover_message).to eq("hello world")
     end
   end
 end

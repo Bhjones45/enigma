@@ -47,10 +47,31 @@ class Rearrange
     rearrange_characters.map do |character|
       if alphabet.include?(character)
         offset = alphabet.reverse.find_index(character)
-        alphabet.rotate(final_shift)[offset]
+        alphabet.reverse.rotate(final_shift)[offset]
       else
         character
       end
     end
+  end
+
+  def rearrange_decrypted_a
+    decrypt_characters(@message.rearrange_characters_a, @new_key.final_shift_a)
+  end
+
+  def rearrange_decrypted_b
+    decrypt_characters(@message.rearrange_characters_b, @new_key.final_shift_b)
+  end
+
+  def rearrange_decrypted_c
+    decrypt_characters(@message.rearrange_characters_c, @new_key.final_shift_c)
+  end
+
+  def rearrange_decrypted_d
+    decrypt_characters(@message.rearrange_characters_d, @new_key.final_shift_d)
+  end
+
+  def uncover_message
+    decrypt = rearrange_decrypted_a.zip(rearrange_decrypted_b, rearrange_decrypted_c, rearrange_decrypted_d)
+    decrypt.flatten.join
   end
 end
