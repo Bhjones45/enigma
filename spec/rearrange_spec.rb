@@ -12,7 +12,7 @@ RSpec.describe Rearrange do
     it 'has attributes' do
       rearrange = Rearrange.new("hello world", "02715", "040895")
 
-      expect(rearrange.message).to eq("hello world")
+      expect(rearrange.message).to be_a(Message)
       expect(rearrange.new_key).to be_a(Key)
     end
   end
