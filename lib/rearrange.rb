@@ -37,4 +37,8 @@ class Rearrange
   def rearrange_encrypted_d
     encrypt_characters(@message.rearrange_characters_d, @new_key.final_shift_d)
   end
+
+  def hidden_message
+    rearrange_encrypted_a.zip(rearrange_encrypted_b, rearrange_encrypted_c, rearrange_encrypted_d)
+  end
 end
