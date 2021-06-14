@@ -29,6 +29,9 @@ RSpec.describe Rearrange do
     it 'can encrypt characters' do
       rearrange = Rearrange.new("hello world", "02715", "040895")
       expect(rearrange.encrypt_characters(["h", "o", "r"], 3)).to eq(["k", "r", "u"])
+      expect(rearrange.encrypt_characters(["e", " ", "l"], 27)).to eq(["e", " ", "l"])
+      expect(rearrange.encrypt_characters(["l", "w", "d"], 73)).to eq(["d", "o", "w"])
+      expect(rearrange.encrypt_characters(["l", "o"], 20)).to eq(["e", "h"])
     end
 
 
