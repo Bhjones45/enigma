@@ -1,7 +1,5 @@
 class Enigma
-  def initialize
-  end
-
+  
   def date_now(date)
     Date.today.strftime('%d%m%y')
   end
