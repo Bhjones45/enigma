@@ -22,4 +22,17 @@ class Enigma
     rearrange = Rearrange.new(message.downcase, key, date)
     rearrange.hidden_message
   end
+
+  def decrypt(message, key = key_generate, date = date_now)
+    {
+      decryption: decrypt_message(message, key, date),
+      key: key,
+      date: date
+    }
+  end
+
+  def decrypt_message(message, key = key_generate, date = date_now)
+    rearrange = Rearrange.new(message.downcase, key, date)
+    rearrange.uncover_message
+  end
 end

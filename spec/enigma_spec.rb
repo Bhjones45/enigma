@@ -28,5 +28,12 @@ RSpec.describe Enigma do
       output = {encryption: "keder ohulw", key: "02715", date: "040895"}
       expect(input).to eq(output)
     end
+
+    it 'can decrypt with both key and date' do
+      enigma = Enigma.new
+      input = enigma.decrypt("keder ohulw", "02715", "040895")
+      output = {decryption: "hello world", key: "02715", date: "040895"}
+      expect(input).to eq(output)
+    end
   end
 end
