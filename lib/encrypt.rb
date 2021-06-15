@@ -12,9 +12,8 @@ txt_file.close
 
 encrypt_text = enigma.encrypt(incoming_text)
 
-puts encrypt_text
 writer = File.open(ARGV[1], "w")
 writer.write(encrypt_text[:encryption])
 writer.close
 
-puts "Created '#{ARGV[1]}' with the key #{hidden_message[:key]} and the date #{hidden_message[:date]}"
+puts "Created '#{ARGV[1]}' with the key #{encrypt_text[:key]} and the date #{encrypt_text[:date]}"
