@@ -14,7 +14,7 @@ RSpec.describe Enigma do
     it 'can generate todays date into DDMMYY' do
       enigma = Enigma.new
 
-      expect(enigma.date_now('140621')).to eq('140621')
+      expect(enigma.date_now).to eq('140621')
     end
 
     it 'can randomly generate a key' do
