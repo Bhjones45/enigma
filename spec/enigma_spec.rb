@@ -22,7 +22,7 @@ RSpec.describe Enigma do
       expect(enigma.key_generate.length).to eq(5)
     end
 
-    xit 'can encrypt with both key and date' do
+    it 'can encrypt with both key and date' do
       enigma = Enigma.new
       input = enigma.encrypt("hello world", "02715", "040895")
       output = {encryption: "keder ohulw", key: "02715", date: "040895"}
