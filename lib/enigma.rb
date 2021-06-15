@@ -19,7 +19,7 @@ class Enigma
   end
 
   def encrypt_message(message, key, date)
-    rearrange = Rearrange.new(message, key, date)
+    rearrange = Rearrange.new(message.downcase, key, date)
     rearrange.hidden_message
   end
 end
